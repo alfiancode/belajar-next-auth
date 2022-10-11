@@ -7,7 +7,7 @@ import { signIn, useSession, signOut } from "next-auth/react";
 export default function Home() {
   const url = process.env.NEXTAUTH_URL;
   async function handleGoogleSignin() {
-    signIn("google", { callbackUrl: url });
+    signIn("google");
   }
   return (
     <div className={styles.container}>
