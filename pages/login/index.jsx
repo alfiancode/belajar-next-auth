@@ -1,13 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { signIn, useSession, signOut } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
-import { useRouter } from "next/router";
-const index = () => {
-  const { data: session } = useSession();
-  if (session) {
-    return <div>Already logged in {session.user.email}</div>;
-  }
+
+const login = () => {
   return (
     <div>
       <div className="m-auto container px-12 sm:px-0 mx-auto">
@@ -114,4 +109,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default login;
