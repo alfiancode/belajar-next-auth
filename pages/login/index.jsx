@@ -1,9 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { signIn } from "next-auth/react";
+import { signIn, useSession, signOut } from "next-auth/react";
 import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
 const index = () => {
+  const { data: session } = useSession();
+  if (session) {
+    return <div>Already logged in {session.user.email}</div>;
+  }
   return (
     <div>
       <div className="m-auto container px-12 sm:px-0 mx-auto">
@@ -11,12 +15,12 @@ const index = () => {
           <div className="m-auto  py-12 sm:p-20 xl:w-10/12">
             <div className="mt-12 rounded-3xl border bg-gray-50 dark:border-gray-700 dark:bg-gray-800 -mx-6 sm:-mx-10 p-8 sm:p-10">
               <div className="grid gap-6 sm:grid-cols-2">
-                <button className="h-11 rounded-full border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
+                <button
+                  className="h-11 rounded-full border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700"
+                  onClick={() => signIn()}
+                >
                   {/* google button */}
-                  <div
-                    className="flex items-center justify-center space-x-4"
-                    onClick={googleHandler}
-                  >
+                  <div className="flex items-center justify-center space-x-4">
                     <Image
                       // url google src
                       src="https://gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
