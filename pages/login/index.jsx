@@ -3,8 +3,9 @@ import React from "react";
 import { signIn, useSession, signOut } from "next-auth/react";
 
 const login = () => {
+  const url = process.env.NEXTAUTH_URL;
   async function handleGoogleSignin() {
-    signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
+    signIn("google", { callbackUrl: url });
   }
   return (
     <div>
