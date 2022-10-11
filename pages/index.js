@@ -9,6 +9,9 @@ export default function Home() {
   async function handleGoogleSignin() {
     signIn("google");
   }
+  async function handleGithubSignin() {
+    signIn("github", { callbackUrl: "http://localhost:3000" });
+  }
   return (
     <div className={styles.container}>
       <div>
@@ -36,7 +39,10 @@ export default function Home() {
                       </span>
                     </div>
                   </button>
-                  <button className="h-11 rounded-full bg-gray-900 px-6 transition hover:bg-gray-800 focus:bg-gray-700 active:bg-gray-600 dark:bg-gray-700 dark:border dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
+                  <button
+                    className="h-11 rounded-full bg-gray-900 px-6 transition hover:bg-gray-800 focus:bg-gray-700 active:bg-gray-600 dark:bg-gray-700 dark:border dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700"
+                    onClick={handleGithubSignin}
+                  >
                     <div className="flex items-center justify-center space-x-4 text-white">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
