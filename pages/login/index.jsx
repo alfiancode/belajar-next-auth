@@ -1,18 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import { signIn } from "next-auth/react";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 const index = () => {
-  // google  handler funcion with next auth
-  async function googleHandler() {
-    signIn("google", { callbackUrl: process.env.NEXTAUTH_URL });
-  }
-  // const googleHandler = () => {
-  //   console.log("oke");
-  //   signIn("google", {
-  //     callbackUrl: "https://belajar-next-auth.vercel.app/",
-  //   });
-  // };
-
   return (
     <div>
       <div className="m-auto container px-12 sm:px-0 mx-auto">
