@@ -10,7 +10,7 @@ export default function Home() {
     signIn("google");
   }
   async function handleGithubSignin() {
-    signIn("github", { callbackUrl: "http://localhost:3000" });
+    signIn("github", { callbackUrl: "http://localhost:3000/login" });
   }
   return (
     <div className={styles.container}>
