@@ -10,7 +10,7 @@ export default function Home() {
     signIn("google");
   }
   async function handleGithubSignin() {
-    signIn("github", { callbackUrl: "http://localhost:3000/login" });
+    signIn("github", { callbackUrl: "https://belajar-next-auth.vercel.app/login" });
   }
   return (
     <div className={styles.container}>
