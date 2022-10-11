@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 const index = () => {
   // google  handler funcion with next auth
   async function googleHandler() {
-    signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
+    signIn("google", { callbackUrl: process.env.NEXTAUTH_URL });
   }
   // const googleHandler = () => {
   //   console.log("oke");
