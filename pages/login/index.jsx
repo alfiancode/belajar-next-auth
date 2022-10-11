@@ -2,6 +2,13 @@ import Image from "next/image";
 import React from "react";
 
 const index = () => {
+  // google  handler funcion with next auth
+  const googleHandler = () => {
+    signIn("google", {
+      callbackUrl: "https://belajar-next-auth.vercel.app/",
+    });
+  };
+
   return (
     <div>
       <div className="m-auto container px-12 sm:px-0 mx-auto">
@@ -10,7 +17,11 @@ const index = () => {
             <div className="mt-12 rounded-3xl border bg-gray-50 dark:border-gray-700 dark:bg-gray-800 -mx-6 sm:-mx-10 p-8 sm:p-10">
               <div className="grid gap-6 sm:grid-cols-2">
                 <button className="h-11 rounded-full border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
-                  <div className="flex items-center justify-center space-x-4">
+                  {/* google button */}
+                  <div
+                    className="flex items-center justify-center space-x-4"
+                    onClick={() => googleHandler}
+                  >
                     <Image
                       // url google src
                       src="https://gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
