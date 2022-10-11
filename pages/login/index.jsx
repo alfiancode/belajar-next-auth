@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
-
+import { signIn } from "next-auth/react";
 const index = () => {
   // google  handler funcion with next auth
   const googleHandler = () => {
+    console.log("oke");
     signIn("google", {
       callbackUrl: "https://belajar-next-auth.vercel.app/",
     });
@@ -20,7 +21,7 @@ const index = () => {
                   {/* google button */}
                   <div
                     className="flex items-center justify-center space-x-4"
-                    onClick={() => googleHandler}
+                    onClick={googleHandler}
                   >
                     <Image
                       // url google src
