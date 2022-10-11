@@ -1,7 +1,7 @@
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-export default nextAuth({
+export default NextAuth({
   providers: [
     // Google Provider
     GoogleProvider({
