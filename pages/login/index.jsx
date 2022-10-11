@@ -12,7 +12,7 @@ const login = () => {
               <div className="grid gap-6 sm:grid-cols-2">
                 <button
                   className="h-11 rounded-full border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700"
-                  onClick={() => signIn()}
+                  onClick={() => signIn("google")}
                 >
                   {/* google button */}
                   <div className="flex items-center justify-center space-x-4">
