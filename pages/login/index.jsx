@@ -3,12 +3,15 @@ import React from "react";
 import { signIn } from "next-auth/react";
 const index = () => {
   // google  handler funcion with next auth
-  const googleHandler = () => {
-    console.log("oke");
-    signIn("google", {
-      callbackUrl: "https://belajar-next-auth.vercel.app/",
-    });
-  };
+  async function googleHandler() {
+    signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
+  }
+  // const googleHandler = () => {
+  //   console.log("oke");
+  //   signIn("google", {
+  //     callbackUrl: "https://belajar-next-auth.vercel.app/",
+  //   });
+  // };
 
   return (
     <div>
