@@ -2,7 +2,7 @@ import React from "react";
 import { signIn, signOut, getSession } from "next-auth/react";
 import Router from "next/router";
 
-const Home = () => {
+const index = () => {
   console.log(session);
 
   // const router for push to another page
@@ -52,5 +52,5 @@ export async function getServerSideProps(context) {
     props: { session },
   };
 }
-export default Home;
+export default index;
 // getserverSideProps session
