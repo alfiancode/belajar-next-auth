@@ -9,11 +9,11 @@ export default function Home() {
 
   const url = process.env.NEXTAUTH_URL;
   async function handleGoogleSignin() {
-    signIn("google");
+    signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
   }
   async function handleGithubSignin() {
     signIn("github", {
-      callbackUrl: "https://belajar-next-auth.vercel.app/login",
+      callbackUrl: "https://belajar-next-auth.vercel.app/",
     });
   }
   if (session) {
@@ -26,7 +26,9 @@ export default function Home() {
   }
   return (
     <div className={styles.container}>
-      <div className="text-5xl">oke dah masuk gaes </div>
+      <div className="text-5xl">
+        oke dah masuk gaes .........................
+      </div>
     </div>
   );
 }
