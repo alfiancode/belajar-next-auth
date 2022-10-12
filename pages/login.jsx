@@ -6,11 +6,11 @@ import { signIn, useSession, signOut } from "next-auth/react";
 export default function Login() {
   const url = process.env.NEXTAUTH_URL;
   async function handleGoogleSignin() {
-    signIn("google");
+    signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
   }
   async function handleGithubSignin() {
     signIn("github", {
-      callbackUrl: "https://belajar-next-auth.vercel.app/login",
+      callbackUrl: "https://belajar-next-auth.vercel.app/",
     });
   }
   const { data: session } = useSession();
