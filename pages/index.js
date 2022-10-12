@@ -19,6 +19,7 @@ export default function Home({ session }) {
     return (
       <div>
         <h1>Already signed in</h1>
+        <h1 className="text-5xl">hallo, {session.user.name}</h1>
         <button onClick={() => signOut()}>Sign out</button>
       </div>
     );
