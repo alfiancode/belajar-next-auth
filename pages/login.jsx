@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+
 import React from "react";
 import { signIn, useSession, signOut } from "next-auth/react";
 export default function Login() {
@@ -14,6 +14,7 @@ export default function Login() {
     });
   }
   const { data: session } = useSession();
+  console.log(session);
   if (session) {
     return (
       <div>
@@ -23,7 +24,7 @@ export default function Login() {
     );
   }
   return (
-    <div className={styles.container}>
+    <div>
       <div>
         <div className="m-auto container px-12 sm:px-0 mx-auto">
           <div className="mx-auto h-full md:w-10/12 lg:w-6/12">

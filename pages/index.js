@@ -1,11 +1,12 @@
-import Head from "next/head";
-import Image from "next/image";
-
 import React from "react";
 import { signIn, useSession, signOut } from "next-auth/react";
+import Router from "next/router";
 export default function Home() {
   const { data: session, status } = useSession();
+  console.log(session);
 
+  // const router for push to another page
+  const router = Router;
   // const url = process.env.NEXTAUTH_URL;
   // async function handleGoogleSignin() {
   //   signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
@@ -24,10 +25,15 @@ export default function Home() {
     );
   }
   return (
-    <div className={styles.container}>
-      <div className="text-5xl">
-        oke dah masuk gaes .........................
-      </div>
+    <div>
+      <div className="text-5xl">masuk dulu gaes</div>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => router.push("/login")}
+      >
+        {" "}
+        ke halaman login{" "}
+      </button>
     </div>
   );
 }
