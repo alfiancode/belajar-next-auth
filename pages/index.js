@@ -1,9 +1,8 @@
 import React from "react";
-import { signIn, useSession, signOut, getSession } from "next-auth/react";
+import { signIn, signOut, getSession } from "next-auth/react";
 import Router from "next/router";
 
 const Home = () => {
-  const { data: session, status } = useSession();
   console.log(session);
 
   // const router for push to another page
