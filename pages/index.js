@@ -1,8 +1,7 @@
 import React from "react";
 import { signIn, signOut, getSession } from "next-auth/react";
 import Router from "next/router";
-
-const index = () => {
+export default function Home() {
   console.log(session);
 
   // const router for push to another page
@@ -36,7 +35,7 @@ const index = () => {
       </button>
     </div>
   );
-};
+}
 export async function getServerSideProps(context) {
   const session = await getSession(context);
 
@@ -52,5 +51,5 @@ export async function getServerSideProps(context) {
     props: { session },
   };
 }
-export default index;
+
 // getserverSideProps session
