@@ -1,7 +1,8 @@
 import React from "react";
-import { signIn, useSession, signOut } from "next-auth/react";
+import { signIn, useSession, signOut, getSession } from "next-auth/react";
 import Router from "next/router";
-export default function Home() {
+
+const Home = () => {
   const { data: session, status } = useSession();
   console.log(session);
 
@@ -36,4 +37,21 @@ export default function Home() {
       </button>
     </div>
   );
+};
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
 }
+export default Home;
+// getserverSideProps session
