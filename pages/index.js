@@ -1,21 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
 import React from "react";
 import { signIn, useSession, signOut } from "next-auth/react";
 export default function Home() {
   const { data: session, status } = useSession();
 
-  const url = process.env.NEXTAUTH_URL;
-  async function handleGoogleSignin() {
-    signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
-  }
-  async function handleGithubSignin() {
-    signIn("github", {
-      callbackUrl: "https://belajar-next-auth.vercel.app/",
-    });
-  }
+  // const url = process.env.NEXTAUTH_URL;
+  // async function handleGoogleSignin() {
+  //   signIn("google", { callbackUrl: "https://belajar-next-auth.vercel.app/" });
+  // }
+  // async function handleGithubSignin() {
+  //   signIn("github", {
+  //     callbackUrl: "https://belajar-next-auth.vercel.app/",
+  //   });
+  // }
   if (session) {
     return (
       <div>
